@@ -1,0 +1,6 @@
+
+templates/accessible/_html/*
+development/*
+templates/accessible/css/custom_theme.css
+.release
+

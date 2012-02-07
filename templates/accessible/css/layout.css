@@ -1,0 +1,183 @@
+/* General layout rules */
+
+body div#wrapper {
+    min-width: 760px;
+    max-width: 960px;
+    width: auto !important;
+    width: 960px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2px;
+    text-align: left;
+  }
+
+
+.hidden {
+    font-size:0.1em;
+    height:1px;
+    line-height:0.1em;
+    margin:0pt;
+    padding:0pt;
+    position:absolute;
+    top:-10000px;
+    width:1px;
+  }
+
+.clr {
+    clear: both;
+  }
+
+div.padding {
+    padding: 0.5em;
+  }
+
+
+div#sidebar-left {
+    float: left;
+    width: 23%;
+    overflow: hidden;
+  }
+
+UNUSEDdiv.moduletable-banner {
+  overflow: hidden;
+}
+
+UNUSEDdiv.moduletable-banner a img{
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#sidebar-left div.padding {
+    padding-left: 0;
+  }
+
+UNUSEDdiv#sidebar-left div.padding form {
+    margin-left: 1em;
+  }
+
+div#sidebar-right div.padding {
+    padding-right: 0;
+  }
+
+div#menu-top div.padding {
+    padding-left: 0;
+  }
+
+div#sidebar-right {
+    float: right;
+    width: 23%;
+    overflow: hidden;
+  }
+
+
+div#main-1 {
+    overflow:hidden;
+    width:100%;
+  }
+
+
+div#main-2 {
+    float:left;
+    overflow:hidden;
+    width:77%;
+  }
+
+
+div#main-3 {
+    float: left;
+    width: 54%;
+    overflow: hidden;
+  }
+
+div#accessibility-links {
+    text-align:right;
+  }
+
+div#accessibility-links.accessibility-icons {
+    float:right;
+  }
+
+div#menu-top {
+    width: 100%;
+  }
+
+div#banner .padding {
+    padding:0;
+    text-align:center;
+  }
+
+
+
+div.blog {
+    width: 100%;
+  }
+
+
+.cols-1
+{
+        display: block;
+        float: none !important;
+        margin: 0 !important;
+}
+
+.cols-2 .column-1
+{
+        width:47%;
+        float:left;
+}
+
+.cols-2 .column-2
+{
+        width:47%;
+        float:right;
+        margin:0
+}
+
+.cols-3 .column-1
+{
+        float:left;
+        width:29%;
+        padding:0px 5px;
+        margin-right:4%
+
+}
+.cols-3 .column-2
+{
+        float:left;
+        width:29%;
+        margin-left:0;
+        padding:0px 5px
+}
+.cols-3 .column-3
+{
+        float:right;
+        width:29%;
+        padding:0px 5px
+}
+
+.items-row
+{
+        overflow:hidden;
+        margin-bottom:10px !important;
+}
+
+.column-1,
+.column-2,
+.column-3
+{
+        /* Troppo padding in HP: padding:10px 5px*/
+}
+
+.column-2
+{
+        width:55%;
+        margin-left:40%;
+}
+
+.column-3
+{
+        width:30%
+}
+

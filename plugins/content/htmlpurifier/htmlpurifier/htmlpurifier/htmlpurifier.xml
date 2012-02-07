@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="content">
+	<name>HTML purifier for Joomla</name>
+	<author>Federico Capoano</author>
+	<creationDate>2012-02-07</creationDate>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>info@joomlashow.it</authorEmail>
+	<authorUrl>nemesisdesign.net</authorUrl>
+	<version>2.5_itopen</version>
+	<description>HTML purifier plugin for Joomla!</description>
+	<files>
+		<filename plugin="htmlpurifier">htmlpurifier.php</filename>
+		<folder>htmlpurifier4.2</folder>
+                <folder>language</folder>
+	</files>
+        <languages folder="language">
+                <language tag="en-GB">en-GB/en-GB.plg_content_htmlpurifier.ini</language>
+                <language tag="it-IT">it-IT/it-IT.plg_content_htmlpurifier.ini</language>
+        </languages>
+        <config>
+                <fields name="params">
+                        <fieldset name="basic">
+                      		<field name="tidylevel" type="list" default="2" label="PLG_CONTENT_HTMLPURIFIER_FIELDTIDYLEVEL_LABEL" description="PLG_CONTENT_HTMLPURIFIER_FIELDTIDYLEVEL_DESCRIPTION">
+                        		<option value="1">PLG_CONTENT_HTMLPURIFIER_FIELDTIDYLEVEL_LIGHT</option>
+                          		<option value="2">PLG_CONTENT_HTMLPURIFIER_FIELDTIDYLEVEL_MEDIUM</option>
+                            		<option value="3">PLG_CONTENT_HTMLPURIFIER_FIELDTIDYLEVEL_HEAVY</option>
+                              	</field>
+                               	<field name="doctype" type="list" default="1" label="PLG_CONTENT_HTMLPURIFIER_FIELDDOCTYPE_LABEL" description="PLG_CONTENT_HTMLPURIFIER_FIELDDOCTYPE_DESCRIPTION">
+			               <option value="1">XHTML 1.0 Transitional</option>
+			               <option value="2">XHTML 1.0 Strict</option>
+			               <option value="3">HTML 4.01 Transitional</option>
+			               <option value="4">HTML 4.01 Strict</option>
+		                </field>
+                                <field name="linkify" type="list" default="0" label="PLG_CONTENT_HTMLPURIFIER_FIELDLINKIFY_LABEL" description="PLG_CONTENT_HTMLPURIFIER_FIELDLINKIFY_DESCRIPTION">
+			               <option value="1">PLG_CONTENT_HTMLPURIFIER_FIELD_YES_OPTION</option>
+			               <option value="0">PLG_CONTENT_HTMLPURIFIER_FIELD_NO_OPTION</option>
+		                </field>
+		                <field name="trusted" type="list" default="1" label="PLG_CONTENT_HTMLPURIFIER_FIELDTRUSTEDHTML_LABEL" description="PLG_CONTENT_HTMLPURIFIER_FIELDTRUSTEDHTML_DESCRIPTION">
+			               <option value="1">PLG_CONTENT_HTMLPURIFIER_FIELD_YES_OPTION</option>
+                                       <option value="0">PLG_CONTENT_HTMLPURIFIER_FIELD_NO_OPTION</option>
+                                </field>
+		                <field name="proprietary" type="list" default="1" label="PLG_CONTENT_HTMLPURIFIER_FIELDPROPRIETARYCSS_LABEL" description="PLG_CONTENT_HTMLPURIFIER_FIELDPROPRIETARYCSS_DESCRIPTION">
+			               <option value="1">PLG_CONTENT_HTMLPURIFIER_FIELD_YES_OPTION</option>
+			               <option value="0">PLG_CONTENT_HTMLPURIFIER_FIELD_NO_OPTION</option>
+		                </field>
+		                <field name="htmlpurifier_cache" type="list" default="1" label="PLG_CONTENT_HTMLPURIFIER_FIELDHTMLPURIFIERCACHE_LABEL" description="PLG_CONTENT_HTMLPURIFIER_FIELDHTMLPURIFIERCACHE_DESCRIPTION">
+			               <option value="Serializer">PLG_CONTENT_HTMLPURIFIER_FIELD_YES_OPTION</option>
+			               <option value="null">PLG_CONTENT_HTMLPURIFIER_FIELD_NO_OPTION</option>
+		                </field>
+                        </fieldset>
+                </fields>
+        </config>
+</extension>

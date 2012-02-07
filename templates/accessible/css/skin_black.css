@@ -1,0 +1,114 @@
+/** Define general colors */
+body.black {
+    background: #333;
+    color: white;
+}
+
+body.black h1,body.black h2{
+    color:yellow;
+    border-bottom: solid 1px yellow;
+}
+
+/** Block styles */
+body.black div#wrapper {
+    background: black;
+    border: solid 2px gray;
+}
+
+body.black div#menu-top
+, body.black div#footer .padding
+, body.black div#banner
+, body.black .moduletable_menu h3
+, body.black .moduletable h3{
+    color: white;
+    background-color: #555;
+}
+
+body.black div#menu-top a {
+    color: white;
+}
+
+body.black .moduletable_menu
+, body.black .moduletable {
+    border: solid 1px #555;
+}
+
+body.black div#footer a {
+    color: white;
+}
+
+body.black div.componentheading {
+    color: gray;
+    font-weight: bold;
+}
+
+body.black a {
+    color: yellow;
+}
+
+body.black .readmore a {
+    font-weight: bold;
+}
+
+body.black .readmore a:hover {
+    color: black;
+    background: yellow;
+}
+
+body.black .menu a {
+    color: yellow;
+}
+
+body.black .button {
+	border: solid 1px #555;
+	background: yellow;
+	color: black;
+}
+
+body.black div#accessibility-links  span.accessibility-icon button,
+body.black div#accessibility-links  span.accessibility-icon {
+    background-color: black;
+}
+body.black div#accessibility-links  span.accessibility-icon button:hover {
+    background-color: gray;
+}
+
+
+body.black #system-message dt { font-weight: bold; }
+body.black #system-message dd { margin: 0;  font-weight: bold; text-indent: 0px;background:gray;padding:0 }
+body.black #system-message dd ul { color: yellow; margin-bottom: 10px; list-style: none; padding: 0px; border-top: 3px solid yellow; border-bottom: 3px solid yellow;}
+
+/* System Standard Messages */
+body.black #system-message dt.message { display: none; }
+body.black #system-message dd.message {  }
+body.black #system-message dd.message ul { background: gray}
+
+/* System Error Messages */
+body.black #system-message dt.error { display: none; }
+body.black #system-message dd.error {  }
+body.black #system-message dd.error ul { color: yellow; background: gray ; border-top: 3px solid yellow; border-bottom: 3px solid yellow;margin:0}
+
+/* System Notice Messages */
+body.black #system-message dt.notice { display: none; }
+body.black #system-message dd.notice {  }
+body.black #system-message dd.notice ul { color: yellow; background: gray; border-top: 3px solid yellow; border-bottom: 3px solid yellow;}
+
+
+/* Since 1.7 */
+
+body.white .star {
+    color: #CC0000;
+}
+
+
+body.black .panel h3.pane-toggler a
+{
+    background:#555555 url(../images/slider_plus.png) right top no-repeat;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+body.black .panel h3.pane-toggler-down a {
+    background:#555555 url(../images/slider_minus.png) right top no-repeat;
+    border-bottom: 1px solid #DDDDDD;
+}
+

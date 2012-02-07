@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.6.0" method="upgrade">
+    <name>AccessKeys</name>
+    <creationDate>2011-07-27</creationDate>
+    <author>Alessandro Pasotti</author>
+    <authorUrl>http://www.itopen.it</authorUrl>
+    <copyright>Copyright 2008 ItOpen</copyright>
+    <license>GNU/AGPL</license>
+    <version>1_1 SVN</version>
+    <description>
+        <![CDATA[
+                 Componente per le accesskey
+                 ]]>
+    </description>
+
+    <installfile>install.accesskeys.php</installfile>
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <update> <!-- Runs on update; New in 1.6 -->
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+
+    <files folder="site">
+    </files>
+
+    <languages>
+    </languages>
+
+    <media destination="com_accesskeys" folder="media">
+        <filename>index.html</filename>
+        <folder>images</folder>
+    </media>
+
+    <administration>
+        <menu>COM_ACCESSKEYS_MENU</menu>
+        <files folder="admin">
+            <filename>index.html</filename>
+
+            <!--        <filename>config.xml</filename>
+            <filename>access.xml</filename>-->
+
+            <filename>admin.accesskeys.php</filename>
+            <filename>controller.php</filename>
+
+            <!-- SQL files section -->
+            <folder>sql</folder>
+            <!-- tables files section -->
+            <folder>tables</folder>
+            <!-- models files section -->
+            <folder>models</folder>
+            <!-- views files section -->
+            <folder>views</folder>
+            <!-- controllers files section -->
+            <folder>controllers</folder>
+            <!-- helpers files section -->
+            <folder>helpers</folder>
+            <folder>language</folder>
+        </files>
+
+
+
+    </administration>
+</install>

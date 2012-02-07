@@ -1,0 +1,1 @@
+alter table `#__menu` drop column accesskey;

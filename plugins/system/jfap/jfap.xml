@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.6" type="plugin" group="system">
+    <name>System - jFap</name>
+    <author>Alessandro Pasotti - ItOpen</author>
+    <creationDate>2011-12-06</creationDate>
+    <copyright>Copyright (C) 2010 ItOpen. All rights reserved.</copyright>
+    <license>http://www.fsf.org/licensing/licenses/agpl-3.0.htm GNU/Affero</license>
+    <authorEmail>info@itopen.it</authorEmail>
+    <authorUrl>www.itopen.org</authorUrl>
+    <version>17_4</version>
+    <description>This FAP plugin fix some common XHTML 1.0 strict incompatibilities.</description>
+    <files>
+        <filename plugin="jfap">jfap.php</filename>
+    </files>
+</extension>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="1.7" type="template" client="site">
+	<name>accessible</name>
+	<version>17_4</version>
+	<creationDate>2011-12-06</creationDate>
+	<author>Alessandro Pasotti - ItOpen</author>
+	<authorEmail>info@itopen.it</authorEmail>
+	<authorUrl>http://www.itopen.it</authorUrl>
+	<copyright>Copyright 2011 - itopen.it</copyright>
+	<license>AGPL: Affero GPL</license>
+	<description>Accessible Template XHTML Strict</description>
+	<files>
+
+		<filename>templateDetails.xml</filename>
+		<folder>js</folder>
+		<folder>html</folder>
+		<folder>css</folder>
+		<folder>images</folder>
+        <filename>component.php</filename>
+        <filename>template_preview.png</filename>
+        <filename>template_thumbnail.png</filename>
+		<filename>index.php</filename>
+		<filename>joomla_fap_tpl_positions.png</filename>
+		<filename>joomla_accessible_template.png</filename>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="advanced">
+                <field name="default_skin" type="radio" default="white" label="Choose default skin">
+                    <option value="white">White (Default)</option>
+                    <option value="black">Black (High Contrast)</option>
+                </field>
+                <field name="liquid_variant" type="radio" default="yes" label="Display accessibility button for liquid layout">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+                </field>
+                <field name="accessibility_icons" type="radio" default="yes" label="Display accessibility icons instead of buttons">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </field>
+                <field name="default_variant" type="list" default="" label="Start with the template variant">
+                    <option value="">None</option>
+                    <option value="liquid">Liquid</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+	<languages folder="language">
+        <language tag="it-IT">it-IT/it-IT.tpl_accessible.ini</language>
+	</languages>
+
+	<positions>
+		<position>left</position>
+		<position>right</position>
+		<position>top</position>
+		<position>bottom</position>
+        <position>center</position>
+        <position>footer</position>
+		<position>breadcrumb</position>
+		<position>banner</position>
+		<position>user1</position>
+		<position>user2</position>
+		<position>user3</position>
+		<position>user4</position>
+		<position>debug</position>
+		<position>syndicate</position>
+	</positions>
+
+</extension>
