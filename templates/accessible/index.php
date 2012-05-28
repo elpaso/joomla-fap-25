@@ -101,6 +101,12 @@ if($fap_font_size_request = JRequest::getVar('fap_font_size')){
 <jdoc:include type="head" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
+<?php if (file_exists(dirname(__FILE__).'/css/skin_white.css')) { ?>
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_white.css" type="text/css" rel="stylesheet" />
+<?php } else { ?>
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_white.less" type="text/css" rel="stylesheet/less">
+<script type="text/javascript" src="<?php echo JURI::base();?>templates/<?php echo $this->template;?>/js/less-1.2.1.min.js"></script>
+<?php } ?>
 <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/template_css.css" rel="stylesheet" type="text/css"/>
 <?php if (file_exists(dirname(__FILE__).'/css/custom_theme.css')) { ?>
     <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/custom_theme.css" rel="stylesheet" type="text/css"/>
@@ -112,10 +118,8 @@ if($fap_font_size_request = JRequest::getVar('fap_font_size')){
 /* <![CDATA[ */
     var skin_default = '<?php echo $this->params->get('default_skin').($this->params->get('default_variant') ? ' ' . $this->params->get('default_variant') : ''); ?>';
     <?php if($fap_skin_current = $session->get('fap_skin_current')){ ?>
-    var skin_current = <?php echo $fap_skin_current; ?>;
+    var skin_current = "<?php echo $fap_skin_current; ?>";
     <?php } ?>
-    // To validator...
-
 /* ]]> */
 </script>
 <?php // set font_size & skin from session

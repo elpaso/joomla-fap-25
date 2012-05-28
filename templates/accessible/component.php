@@ -109,7 +109,7 @@ if($fap_font_size_request = JRequest::getVar('fap_font_size')){
 /* <![CDATA[ */
     var skin_default = '<?php echo $this->params->get('default_skin'); ?>';
     <?php if($fap_skin_current = $session->get('fap_skin_current')){ ?>
-    var skin_current = <?php echo $fap_skin_current; ?>;
+    var skin_current = "<?php echo $fap_skin_current; ?>";
     <?php } ?>
     // To validator...
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
-<extension version="1.7" type="template" client="site">
+<extension version="1.7" type="template" client="site" method="upgrade">
 	<name>accessible</name>
-	<version>17_4</version>
-	<creationDate>2011-12-06</creationDate>
+	<version>2.5.1</version>
+	<creationDate>2012-05-25</creationDate>
 	<author>Alessandro Pasotti - ItOpen</author>
 	<authorEmail>info@itopen.it</authorEmail>
 	<authorUrl>http://www.itopen.it</authorUrl>
