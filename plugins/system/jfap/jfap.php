@@ -37,10 +37,10 @@ class  plgSystemJFap extends JPlugin
         $dc_desc_regexp = '#<meta name="description"#';
         $dc_desc_replace = '<meta name="DC.Description"';
         $body = preg_replace(array($dc_desc_regexp, '/target=[\'"][^\'"]+/', $style_regexp, '/(<meta name="generator" content=")([^"]+)"/'),
-                             array($dc_desc_replace, 'onclick="window.open(this.href);return false;', $style_replace, '\1\2 - Versione FAP"'), $body);
+                             array($dc_desc_replace, 'onclick="window.open(this.href);return false;" onkeypress="window.open(this.href);return false;', $style_replace, '\1\2 - Versione FAP"'), $body);
         # onkeypress
         # Already in the accessibility links
-        # $body = preg_replace('|onclick="(.*?)"|mus', 'onclick="\1" onkeypress="\1"', $body);
+        #$body = preg_replace('|onclick="(.*?)"|mus', 'onclick="\1" onkeypress="\1"', $body);
         JResponse::setBody($body);
     }
 
