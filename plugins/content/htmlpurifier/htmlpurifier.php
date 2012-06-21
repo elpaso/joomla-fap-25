@@ -76,14 +76,7 @@ class plgContenthtmlpurifier extends JPlugin
                 }
                 class_exists('JLoader') or die;
                 // Setup the autoloaders.
-                JLoader::setup();
-                // Import the cms loader if necessary.
-                if (!class_exists('JCmsLoader')) {
-                    require_once JPATH_PLATFORM.'/cms/cmsloader.php';
-                }
-
-                // Setup the autoloader.
-                JCmsLoader::setup();
+                JLoader::setup();                
 
             }
 
