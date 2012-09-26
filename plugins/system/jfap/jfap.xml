@@ -2,7 +2,7 @@
 <extension version="1.6" type="plugin" group="system">
     <name>System - jFap</name>
     <author>Alessandro Pasotti - ItOpen</author>
-    <creationDate>2012-06-07</creationDate>
+    <creationDate>2012-09-26</creationDate>
     <copyright>Copyright (C) 2010 ItOpen. All rights reserved.</copyright>
     <license>http://www.fsf.org/licensing/licenses/agpl-3.0.htm GNU/Affero</license>
     <authorEmail>info@itopen.it</authorEmail>

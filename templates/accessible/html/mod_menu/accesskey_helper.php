@@ -20,19 +20,21 @@ class AccesskeyHelper {
     private static $titles = null;
 
     private static function init(){
-        $db =& JFactory::getDBO();
+        $db = JFactory::getDBO();
         $db->setQuery('SELECT id, accesskey, note FROM #__menu WHERE (accesskey IS NOT NULL AND accesskey != \'\') OR (note IS NOT NULL OR note != \'\')');
         $aks = $db->loadAssocList('id');
         AccesskeyHelper::$accesskeys = array();
-        foreach($aks as $id => $data){
-            if($data['accesskey']){
-                AccesskeyHelper::$accesskeys[$id] = $data['accesskey'];
-            }
-            if($data['note']){
+            if($aks){
+            foreach($aks as $id => $data){
                 if($data['accesskey']){
-                    AccesskeyHelper::$titles[$id] = "[{$data['accesskey']}] - " . $data['note'];
-                } else {
-                    AccesskeyHelper::$titles[$id] = $data['note'];
+                    AccesskeyHelper::$accesskeys[$id] = $data['accesskey'];
+                }
+                if($data['note']){
+                    if($data['accesskey']){
+                        AccesskeyHelper::$titles[$id] = "[{$data['accesskey']}] - " . $data['note'];
+                    } else {
+                        AccesskeyHelper::$titles[$id] = $data['note'];
+                    }
                 }
             }
         }

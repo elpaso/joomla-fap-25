@@ -1,10 +1,10 @@
 <?php
 /**
 * This file is part of
-* Joomla! 1.7 FAP
+* Joomla! 2.5 FAP
 * @package   JoomlaFAP
 * @author    Alessandro Pasotti
-* @copyright    Copyright (C) 2011 Alessandro Pasotti http://www.itopen.it
+* @copyright    Copyright (C) 2012 Alessandro Pasotti http://www.itopen.it
 * @license      GNU/AGPL
 
     This program is free software: you can redistribute it and/or modify
@@ -27,19 +27,21 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 JHtml::_('behavior.framework', true);
 
 
+require_once(JPATH_THEMES.'/'.$this->template.'/aliases.php');
+
 // xml prolog
 echo '<?xml version="1.0" encoding="'. $this->_charset .'"?' .'>';
 
 
 $cols = 1;
-if ($this->countModules('right')
-    && JRequest::getCmd('layout') != 'form'
-    && JRequest::getCmd('task') != 'edit') {
-    $cols += 1;
+if ($this->countModules(get_accessible_pos('right'))
+	&& JRequest::getCmd('layout') != 'form'
+	&& JRequest::getCmd('task') != 'edit') {
+	$cols += 1;
 }
 
-if($this->countModules('left or inset or user4')) {
-    $cols += 1;
+if($this->countModules(get_accessible_pos('left or inset or user4'))) {
+	$cols += 1;
 }
 
 /* Accessibility session storage */
@@ -96,23 +98,32 @@ if($fap_font_size_request = JRequest::getVar('fap_font_size')){
      PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
-<head>
+
 <meta name="language" content="<?php echo $this->language; ?>" />
 <jdoc:include type="head" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
+<?php if (file_exists(JPATH_THEMES.'/'.$this->template.'/css/skin_white.less')) { ?>
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_white.less" type="text/css" rel="stylesheet/less" />
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_black.less" type="text/css" rel="stylesheet/less" />
+<script type="text/javascript" src="<?php echo JURI::base();?>templates/<?php echo $this->template;?>/js/less-1.2.1.min.js"></script>
+<?php } else { ?>
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_white.css" type="text/css" rel="stylesheet">
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_black.css" type="text/css" rel="stylesheet">
+<?php } ?>
 <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/template_css.css" rel="stylesheet" type="text/css"/>
+<?php if ($this->params->get('custom_theme') == 'yes' && file_exists(JPATH_THEMES.'/'.$this->template.'/css/custom_theme.css')) { ?>
+    <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/custom_theme.css" rel="stylesheet" type="text/css"/>
+<?php } ?>
 <!--[if IE]>
 <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/msie6.css" rel="stylesheet" type="text/css"/>
 <![endif]-->
 <script type="text/javascript">
 /* <![CDATA[ */
-    var skin_default = '<?php echo $this->params->get('default_skin'); ?>';
+    var skin_default = '<?php echo $this->params->get('default_skin').($this->params->get('default_variant') ? ' ' . $this->params->get('default_variant') : ''); ?>';
     <?php if($fap_skin_current = $session->get('fap_skin_current')){ ?>
     var skin_current = "<?php echo $fap_skin_current; ?>";
     <?php } ?>
-    // To validator...
-
 /* ]]> */
 </script>
 <?php // set font_size & skin from session

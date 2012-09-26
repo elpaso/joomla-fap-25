@@ -1,239 +1,219 @@
 /** Define general colors */
+/* page title */
+/* article title */
+/* black */
 body.white {
-    background: #E0DDFF;
+  background-color: #f0f3f8;
 }
-
 body.white a {
-    text-decoration: none;
-    border-bottom: dotted 1px #0A2469;
-    color: #0A2469;
+  text-decoration: none;
+  border-bottom: dotted 1px #001b72;
+  color: #001b72;
 }
-
-body.white h1 a
-, body.white h2 a
-, body.white h3 a {
-    color:#903;
-    border-bottom: none;
+body.white h1 a,
+body.white h2 a,
+body.white h3 a {
+  color: #990033;
+  border-bottom: solid 1px transparent;
 }
-
 body.white a:hover {
-    background: #903;
-    color: white;
+  background: #ffffff;
+  color: #001b72;
 }
-
-body.white h1
-,body.white h2 {
-    color:#903;
-    border-bottom: solid 1px #903;
+body.white h1,
+body.white h2 {
+  color: #990033;
+  border-bottom: solid 1px #990033;
 }
-
-body.white #banner {
-  background-color:  #E8E8E8;
+body.white h1 {
+  border-bottom: solid 1px transparent;
 }
-
+body.white div.items-row {
+  border-top: solid 1px transparent;
+}
+body.white div.random-image {
+  background-color: #cccccc;
+}
 /** Block styles */
 body.white div#wrapper {
-    background: white;
-    border: solid 2px gray;
+  background: white;
+  border: solid 2px #bbbbbb;
 }
-
-body.white div#menu-top
-, body.white div#footer .padding
-, body.white div#banner
-, body.white .moduletable_menu h3
-, body.white .moduletable h3{
-    color: white;
-    background-color: #0A2469;
+body.white .module-title {
+  color: #ffffff;
+  background-color: #002c74;
 }
-
+body.white div#footer .moduletable {
+  color: #000000;
+  background-color: #efefef;
+  border: solid 1px #efefef;
+}
+body.white div#menu-top {
+  background-color: #002c74;
+}
 body.white div#menu-top a {
-    color: white;
+  color: #ffffff;
 }
-
-body.white .menu a
-, body.white .menu ul:first-child li.parent:first-child {
-    color: #0A2469;
-    border-top: dotted 1px gray;
-    border-bottom: none;
+body.white .menu a,
+body.white .menu ul:first-child li.parent:first-child {
+  color: #001b72;
+  border-top: dotted 1px gray;
+  border-bottom: none;
 }
-
-
-body.white .menu li li a
-, body.white .menu li li li a
-, body.white .menu ul.parent li a   {
-    border-top: none;
+body.white .menu li li a,
+body.white .menu li li li a,
+body.white .menu ul.parent li a {
+  border-top: none;
 }
-
 body.white .menu a:visited {
-    color: #014A9E;
+  color: #001b72;
 }
-
 body.white .menu a:hover {
-    background-color:  #EEEEFF;
+  background-color: #dfe4ed;
 }
-
 body.white .menu li.current a {
-    background-color: #EEEEFF;
+  background-color: #dfe4ed;
 }
-
 body.white #menu-top .menu li.current a {
-    color: #EEEEFF;
-    background-color: #0A2469;
+  color: #dfe4ed;
+  background-color: #001b72;
 }
-
-
 body.white .menu li.current li a {
-    background-color: white;
+  background-color: white;
 }
-
-
-body.white #main a:hover, body.white  #main a:active, body.white  #main a:focus {
-    color: white;
-    background-color: #0A2469;
+body.white #main a:hover,
+body.white #main a:active,
+body.white #main a:focus {
+  color: white;
+  background-color: #001b72;
 }
-
-/*
-body.white .menu a:hover
-, body.white .latestnews a:hover
-, body.white .menu li li:last-child a:hover
-, body.white .menu li.current a:hover
-{
-    color: white;
-    background-color: #0A2469;
-}
-*/
-
 body.white div#menu-top a:hover {
-    background-color: white;
-    color: #0A2469;
+  background-color: white;
+  color: #001b72;
 }
-
-body.white .moduletable_menu
-, body.white .moduletable {
-    border: solid 1px #0A2469;
+body.white .moduletable_menu,
+body.white .moduletable-menu,
+body.white .moduletable {
+  border: solid 1px #001b72;
 }
-
 body.white div#footer a {
-    color: white;
+  color: #001b72;
 }
-
 body.white div.componentheading {
-    color: gray;
-    font-weight: bold;
+  color: gray;
+  font-weight: bold;
 }
-
 body.white .readmore a {
-    color: #903;
-    font-weight: bold;
-    border-bottom: dotted 1px #903;
+  color: #001b72;
+  font-weight: bold;
+  border-bottom: dotted 1px #001b72;
 }
-
-body.white .readmore a:hover
-, body.white a.contentpagetitle:hover {
-    background: #903;
-    color: white;
+body.white .readmore a:hover,
+body.white a.contentpagetitle:hover {
+  background: #001b72;
+  color: #ffffff;
 }
-
-body.white .button, body.white button {
-	border: solid 1px #0A2469;
-	background: #903;
-	color: white;
+body.white .button,
+body.white button,
+body.white .button-search {
+  border: solid 1px #ffffff;
+  background: #002c74;
+  color: #ffffff;
 }
-
+body.white .button:hover,
+body.white button:hover,
+body.white .button-search:hover {
+  background: #224e96;
+}
 body.white .sectiontableentry1 {
-	background: #EEF2FF;
+  background: #eef2ff;
 }
-
 body.white div.pagenav {
-	background: #EEF2FF;
-	border: solid 1px #0A2469;
+  background: #eef2ff;
+  border: solid 1px #001b72;
 }
-
-
 /* tags */
-
-body.white div.tool-tip {
-	background: #FFF98C;
-	color: black;
-	border: solid 2px gray;
-	padding: 1em;
-}
-
-
 body.white .highlight {
-	background: yellow;
+  background: yellow;
 }
-
-body.white .pagination
-, body.white ul.pagenav {
-	background:#EEEEFF none repeat scroll 0%;
-    border-top:1px solid #BBBBBB;
-    border-bottom:1px solid #BBBBBB;
+body.white .pagination,
+body.white ul.pagenav {
+  background: #eef2ff none repeat scroll 0%;
+  border-top: 1px solid #bbbbbb;
+  border-bottom: 1px solid #bbbbbb;
 }
-
-
-body.white .notice, body.white .message {
-    background:#EEEEFF none repeat scroll 0%;
-    font-size:110%;
-    font-style:italic;
-    padding:1em;
+body.white .notice,
+body.white .message {
+  background: #dfe4ed none repeat scroll 0%;
+  font-size: 110%;
+  font-style: italic;
+  padding: 1em;
 }
-
-body.white form.editor a:hover
-,body.white .mceWrapper a:hover {
-	background:inherit;
-	color: black;
+body.white form.editor a:hover,
+body.white .mceWrapper a:hover {
+  background: inherit;
+  color: black;
 }
-
-body.white div#accessibility-links  span.accessibility-icon button,
-body.white div#accessibility-links  span.accessibility-icon {
-    background-color: #002C74;
+body.white div#accessibility-links span.accessibility-icon button,
+body.white div#accessibility-links span.accessibility-icon {
+  background-color: #002c74;
 }
-body.white div#accessibility-links  span.accessibility-icon button:hover {
-    background-color: #0037AE;
+body.white div#accessibility-links span.accessibility-icon button:hover {
+  background-color: #0037ae;
 }
-
+body.white div#accessibility-links span.accessibility-text {
+  color: #000000;
+}
+div#accessibility-links button {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  color: #000000;
+  font-weight: bold;
+  margin-left: 1em;
+}
 /* from 1.7 */
-
-body.white table.weblinks th a, body.white table.newsfeeds th a, body.white table.category th a, body.white table.jlist-table th a, body.white table.weblinks th, body.white table.newsfeeds th, body.white table.category th, body.white table.jlist-table th {
-    color: #FFFFFF;
+body.white table.weblinks th a,
+body.white table.newsfeeds th a,
+body.white table.category th a,
+body.white table.jlist-table th a,
+body.white table.weblinks th,
+body.white table.newsfeeds th,
+body.white table.category th,
+body.white table.jlist-table th {
+  color: white;
 }
-
-body.white table.weblinks th, body.white table.newsfeeds th, body.white table.category th, body.white table.jlist-table th {
-    background: none repeat scroll 0 0 #002C74;
+body.white table.weblinks th,
+body.white table.newsfeeds th,
+body.white table.category th,
+body.white table.jlist-table th {
+  background: none repeat scroll 0 0 #002c74;
 }
-
-body.white tr, body.white td {
-    border: 1px solid #DDDDFF;
+body.white tr,
+body.white td {
+  border: 1px solid #dddddd;
 }
-
 body.white fieldset {
-    border: solid 2px #DDDDFF;
+  border: solid 2px #dddddd;
 }
-
 body.white .article-info {
-    color: #444444;
+  color: #652401;
 }
-
 body.white .star {
-    color: #CC0000;
+  color: red;
 }
-
-
-body.white .panel h3.pane-toggler a
-{
-    background:#F5F5F5 url(../images/slider_plus.png) right top no-repeat;
-    border-bottom: 1px solid #DDDDDD;
+body.white .panel h3.pane-toggler a {
+  background: #f5f5f5 url(../images/slider_plus.png) right top no-repeat;
+  border-bottom: 1px solid #dddddd;
 }
-
 body.white .panel h3.pane-toggler-down a {
-    background:#F5F5F5 url(../images/slider_minus.png) right top no-repeat;
-    border-bottom: 1px solid #DDDDDD;
+  background: #f5f5f5 url(../images/slider_minus.png) right top no-repeat;
+  border-bottom: 1px solid #dddddd;
 }
-
-
-body.white .panel h3.pane-toggler a:hover
-, body.white .panel h3.pane-toggler-down a:hover {
-    color: white;
-    background: #0A2469;
+body.white .panel h3.pane-toggler a:hover,
+body.white .panel h3.pane-toggler-down a:hover {
+  color: white;
+  background: #001b72;
+}
+body.white .cat-list-row1 {
+  background-color: #eef2ff;
 }

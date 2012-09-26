@@ -51,7 +51,8 @@ label.block {
     margin-bottom: 1em;
 }
 
-.moduletable ul.menu li, .moduletable-footer li {
+.moduletable ul.menu li
+, .moduletable-footer li {
     list-style-type: none;
 }
 
@@ -61,7 +62,7 @@ label.block {
 	font-weight: bold;
 }
 
-.moduletable_menu h3, .moduletable h3{
+.module-title {
 	font-size:110%;
 	font-weight:bold;
     padding:0.5em 0 0.5em 0.5em;
@@ -516,6 +517,20 @@ table {
     width: 9em;
 }
 
+/* mod login */
+#login-form fieldset.userdata {
+    padding: 0;
+    border: none;
+}
+
+#login-form fieldset.userdata .button {
+        margin-left: 0.5em;
+}
+
+#modlgn-username
+, #modlgn-passwd {
+    width: 190px;
+}
 /* mod stats  */
 
 

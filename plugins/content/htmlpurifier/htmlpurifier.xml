@@ -2,11 +2,11 @@
 <extension version="1.6" type="plugin" group="content">
 	<name>HTML purifier for Joomla</name>
 	<author>Federico Capoano</author>
-	<creationDate>2012-02-07</creationDate>
+	<creationDate>2012-07-01</creationDate>
 	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
 	<authorEmail>info@joomlashow.it</authorEmail>
 	<authorUrl>nemesisdesign.net</authorUrl>
-	<version>2.5_itopen</version>
+	<version>2.5.2_itopen</version>
 	<description>HTML purifier plugin for Joomla!</description>
 	<files>
 		<filename plugin="htmlpurifier">htmlpurifier.php</filename>

@@ -1,10 +1,10 @@
 <?php
 /**
 * This file is part of
-* Joomla! 1.7 FAP
+* Joomla! 2.5 FAP
 * @package   JoomlaFAP
 * @author    Alessandro Pasotti
-* @copyright    Copyright (C) 2011 Alessandro Pasotti http://www.itopen.it
+* @copyright    Copyright (C) 2012 Alessandro Pasotti http://www.itopen.it
 * @license      GNU/AGPL
 
     This program is free software: you can redistribute it and/or modify
@@ -26,19 +26,19 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 
 JHtml::_('behavior.framework', true);
 
+require_once(JPATH_THEMES.'/'.$this->template.'/aliases.php');
 
 // xml prolog
 echo '<?xml version="1.0" encoding="'. $this->_charset .'"?' .'>';
 
-
 $cols = 1;
-if ($this->countModules('right')
+if ($this->countModules(get_accessible_pos('right'))
 	&& JRequest::getCmd('layout') != 'form'
 	&& JRequest::getCmd('task') != 'edit') {
 	$cols += 1;
 }
 
-if($this->countModules('left or inset or user4')) {
+if($this->countModules(get_accessible_pos('left or inset or user4'))) {
 	$cols += 1;
 }
 
@@ -101,14 +101,16 @@ if($fap_font_size_request = JRequest::getVar('fap_font_size')){
 <jdoc:include type="head" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
-<?php if (file_exists(dirname(__FILE__).'/css/skin_white.css')) { ?>
-<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_white.css" type="text/css" rel="stylesheet" />
-<?php } else { ?>
-<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_white.less" type="text/css" rel="stylesheet/less">
+<?php if (file_exists(JPATH_THEMES.'/'.$this->template.'/css/skin_white.less')) { ?>
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_white.less" type="text/css" rel="stylesheet/less" />
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_black.less" type="text/css" rel="stylesheet/less" />
 <script type="text/javascript" src="<?php echo JURI::base();?>templates/<?php echo $this->template;?>/js/less-1.2.1.min.js"></script>
+<?php } else { ?>
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_white.css" type="text/css" rel="stylesheet">
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_black.css" type="text/css" rel="stylesheet">
 <?php } ?>
 <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/template_css.css" rel="stylesheet" type="text/css"/>
-<?php if (file_exists(dirname(__FILE__).'/css/custom_theme.css')) { ?>
+<?php if ($this->params->get('custom_theme') == 'yes' && file_exists(JPATH_THEMES.'/'.$this->template.'/css/custom_theme.css')) { ?>
     <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/custom_theme.css" rel="stylesheet" type="text/css"/>
 <?php } ?>
 <!--[if IE]>
@@ -143,10 +145,11 @@ if($fap_font_size = $session->get('fap_font_size')){ ?>
 		</ul>
 	</div>
     <div id="wrapper">
-        <?php if ($this->countModules('breadcrumb')) { ?>
+        <?php if ($this->countModules(get_accessible_pos('breadcrumb'))) { ?>
         <div id="pathway">
             <div class="padding">
             <jdoc:include type="modules" name="breadcrumb" />
+            <jdoc:include type="modules" name="position-1" />
             </div>
         </div>
         <?php } ?>
@@ -164,7 +167,7 @@ if($fap_font_size = $session->get('fap_font_size')){ ?>
                         <?php if('yes' == $this->params->get('liquid_variant')) { ?>
                         <button type="button" name="fap_skin" value="liquid" id="liquid" accesskey="L" onclick="skin_set_variant('liquid'); return false;" onkeypress="return handle_keypress(function(){skin_set_variant('liquid');});" title="<?php echo JText::_('FAP_SET_VARIABLE_WIDTH'); ?> [L]"><?php echo JText::_('FAP_VARIABLE_WIDTH'); ?></button>
                         <?php } ?>
-                        <button type="button" name="reset" id="reset" value="<?php echo JText::_('FAP_RESET'); ?>" accesskey="Z" onclick="skin_change('<?php echo $this->params->get('default_skin'); ?>'); skin_set_variant(''); fs_set(fs_default); return false;" onkeypress="return handle_keypress(function(){skin_change(\'<?php echo $this->params->get('default_skin'); ?>'); skin_set_variant(''); fs_set(fs_default);});" title="<?php echo JText::_('FAP_REVERT_STYLES_TO_DEFAULT'); ?> [Z]"><?php echo JText::_('FAP_RESET'); ?></button>
+                        <button type="button" name="reset" id="reset" value="<?php echo JText::_('FAP_RESET'); ?>" accesskey="Z" onclick="skin_change('<?php echo $this->params->get('default_skin'); ?>'); skin_set_variant(''); fs_set(fs_default); return false;" onkeypress="return handle_keypress(function(){skin_change('<?php echo $this->params->get('default_skin'); ?>'); skin_set_variant(''); fs_set(fs_default);});" title="<?php echo JText::_('FAP_REVERT_STYLES_TO_DEFAULT'); ?> [Z]"><?php echo JText::_('FAP_RESET'); ?></button>
                     </div>
                 </form>
 
@@ -183,7 +186,7 @@ if($fap_font_size = $session->get('fap_font_size')){ ?>
                         <span class="accessibility-icon"><button type="submit" name="fap_skin" value="liquid" id="layouttext" accesskey="L" onclick="skin_set_variant('liquid'); return false;" onkeypress="return handle_keypress(function(){skin_set_variant('liquid');});" title="<?php echo JText::_('FAP_SET_VARIABLE_WIDTH'); ?> [L]" ><span><?php echo JText::_('FAP_SET_VARIABLE_WIDTH'); ?></span></button></span>
                         <?php } ?>
                         <span class="accessibility-text"><?php echo JText::_('FAP_reset'); ?></span>
-                        <span class="accessibility-icon"><button type="submit" name="fap_skin" value="reset" id="reset" accesskey="Z" onclick="skin_change('<?php echo $this->params->get('default_skin'); ?>'); skin_set_variant(''); fs_set(fs_default); return false;" onkeypress="return handle_keypress(function(){skin_change(\'<?php echo $this->params->get('default_skin'); ?>'); skin_set_variant(''); fs_set(fs_default);});" title="<?php echo JText::_('FAP_REVERT_STYLES_TO_DEFAULT'); ?> [Z]"><span><?php echo JText::_('FAP_REVERT_STYLES_TO_DEFAULT'); ?></span></button></span>
+                        <span class="accessibility-icon"><button type="submit" name="fap_skin" value="reset" id="reset" accesskey="Z" onclick="skin_change('<?php echo $this->params->get('default_skin'); ?>'); skin_set_variant(''); fs_set(fs_default); return false;" onkeypress="return handle_keypress(function(){skin_change('<?php echo $this->params->get('default_skin'); ?>'); skin_set_variant(''); fs_set(fs_default);});" title="<?php echo JText::_('FAP_REVERT_STYLES_TO_DEFAULT'); ?> [Z]"><span><?php echo JText::_('FAP_REVERT_STYLES_TO_DEFAULT'); ?></span></button></span>
                     </div>
                 </form>
             </div>
@@ -191,89 +194,102 @@ if($fap_font_size = $session->get('fap_font_size')){ ?>
           </div>
         </div>
         <?php // Banner from component or CSS
-        if ($this->countModules('banner')) { ?>
+        if ($this->countModules(get_accessible_pos('banner'))) { ?>
         <div id="banner">
             <div class="padding">
-            <jdoc:include type="modules" name="banner" style="xhtml" />
+            <jdoc:include type="modules" name="banner" style="accessible"" />
+            <jdoc:include type="modules" name="position-0" style="accessible"" />
             </div>
         </div>
         <?php } ?>
-            <?php if ($this->countModules('user3')) { ?>
+            <?php if ($this->countModules(get_accessible_pos('user3'))) { ?>
             <div id="menu-top">
                 <div class="padding">
-                <jdoc:include type="modules" name="user3" style="xhtml" />
+                <jdoc:include type="modules" name="user3" style="accessible"" />
+                <jdoc:include type="modules" name="position-2" style="accessible"" />
                 </div>
             </div>
             <?php } ?>
             <div class="clr"></div>
-            <?php if ($this->countModules('left or inset or user4')) { ?>
+            <?php if ($this->countModules(get_accessible_pos('left or inset or user4'))) { ?>
             <div id="sidebar-left">
             <div class="padding">
-            	<?php if ($this->countModules('user4')) { ?>
+                <a name="main-menu" class="hidden"></a>
+            	<?php if ($this->countModules(get_accessible_pos('user4'))) { ?>
                 <div id="searchbox">
-                    <jdoc:include type="modules" name="user4" style="xhtml" />
+                    <jdoc:include type="modules" name="user4" style="accessible"" />
+                    <jdoc:include type="modules" name="position-7" style="accessible"" />
                 </div>
                 <?php } ?>
-                <a name="main-menu" class="hidden"></a>
-                <jdoc:include type="modules" name="left" style="xhtml" />
-                <?php if ($this->countModules('inset')) { ?>
+                <jdoc:include type="modules" name="left" style="accessible"" />
+                <jdoc:include type="modules" name="position-4" style="accessible"" />
+                <?php if ($this->countModules(get_accessible_pos('inset'))) { ?>
                 <div class="inset">
-                    <jdoc:include type="modules" name="inset" style="xhtml" />
+                    <jdoc:include type="modules" name="inset" style="accessible"" />
+                    <jdoc:include type="modules" name="position-5" style="accessible"" />
                 </div>
                 <?php } ?>
             </div>
             </div>
         <?php } ?>
-        <?php if ($this->countModules('right') 	&& JRequest::getCmd('layout') != 'form'
+        <?php if ($this->countModules(get_accessible_pos('right')) 	&& JRequest::getCmd('layout') != 'form'
 	&& JRequest::getCmd('task') != 'edit') { ?>
         <div id="sidebar-right">
             <div class="padding">
-                <jdoc:include type="modules" name="right" style="xhtml" />
+                <jdoc:include type="modules" name="right" style="accessible"" />
+                <jdoc:include type="modules" name="position-6" style="accessible"" />
+                <jdoc:include type="modules" name="position-8" style="accessible"" />
+                <jdoc:include type="modules" name="position-3" style="accessible"" />
             </div>
         </div>
         <?php } ?>
         <div id="main-<?php print $cols ;?>" class="maincomponent">
-          <?php if ($this->countModules('center')){ ?>
+          <?php if ($this->countModules(get_accessible_pos('center'))){ ?>
           <div id="center-module">
               <div class="padding">
-                  <jdoc:include type="modules" name="center" style="xhtml" />
+                  <jdoc:include type="modules" name="center" style="accessible"" />
+                  <jdoc:include type="modules" name="position-12" style="accessible"" />
               </div>
           </div>
           <?php } ?>
             <a name="main-content" class="hidden"></a>
             <div class="padding">
             <jdoc:include type="message" />
-            <?php if ($this->countModules('top') && JRequest::getCmd('task') != 'edit') { ?>
-            <jdoc:include type="modules" name="top" style="xhtml" />
+            <?php if ($this->countModules(get_accessible_pos('top')) && JRequest::getCmd('task') != 'edit') { ?>
+            <jdoc:include type="modules" name="top" style="accessible"" />
             <div class="clr"></div>
             <?php } ?>
-            <jdoc:include type="component" style="xhtml"/>
+            <jdoc:include type="component" style="accessible""/>
             <div id="user12">
-                <?php if ($this->countModules('user1 or user2') && ! $this->countModules('user1 and user2')) { ?>
+                <?php if ($this->countModules(get_accessible_pos('user1 or user2')) && ! $this->countModules(get_accessible_pos('user1 and user2'))) { ?>
                 <div class="userfull">
-                    <jdoc:include type="modules" name="user1" style="xhtml" />
-                    <jdoc:include type="modules" name="user2" style="xhtml" />
+                    <jdoc:include type="modules" name="user1" style="accessible"" />
+                    <jdoc:include type="modules" name="user2" style="accessible"" />
+                    <jdoc:include type="modules" name="position-9" style="accessible"" />
+                    <jdoc:include type="modules" name="position-10" style="accessible"" />
+                    <jdoc:include type="modules" name="position-11" style="accessible"" />
                 </div>
                 <?php } ?>
-                <?php if ($this->countModules('user1 and user2')) { ?>
+                <?php if ($this->countModules(get_accessible_pos('user1 and user2'))) { ?>
                 <div class="column_left">
-                    <jdoc:include type="modules" name="user1" style="xhtml" />
+                    <jdoc:include type="modules" name="user1" style="accessible"" />
                 </div>
                 <div class="column_right">
-                    <jdoc:include type="modules" name="user2" style="xhtml" />
+                    <jdoc:include type="modules" name="user2" style="accessible"" />
                 </div>
                 <?php } ?>
             </div>
-            <?php if ($this->countModules('bottom') && JRequest::getCmd('task') != 'edit') { ?>
-            <jdoc:include type="modules" name="bottom" style="xhtml" />
+            <?php if ($this->countModules(get_accessible_pos('bottom')) && JRequest::getCmd('task') != 'edit') { ?>
+            <jdoc:include type="modules" name="bottom" style="accessible"" />
             <div class="clr"></div>
             <?php } ?>
             </div>
         </div>
         <div id="footer">
             <div class="padding">
-                <?php if ($this->countModules('footer')) { ?>
-                <jdoc:include type="modules" name="footer" style="xhtml" />
+                <?php if ($this->countModules(get_accessible_pos('footer'))) { ?>
+                <jdoc:include type="modules" name="footer" style="accessible"" />
+                <jdoc:include type="modules" name="position-14" style="accessible"" />
 				<?php } ?>
             </div>
 
