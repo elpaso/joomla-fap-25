@@ -2,7 +2,7 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="1.7" type="template" client="site" method="upgrade">
 	<name>accessible</name>
-	<version>2.5.2_dotslot</version>
+	<version>2.5.2</version>
 	<creationDate>2012-09-28</creationDate>
 	<author>Alessandro Pasotti - ItOpen</author>
 	<authorEmail>info@itopen.it</authorEmail>
