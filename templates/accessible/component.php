@@ -27,7 +27,13 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 JHtml::_('behavior.framework', true);
 
 
-require_once(JPATH_THEMES.'/'.$this->template.'/aliases.php');
+if($this->params->get('beez2_poitions') == 'yes'){
+	require_once(JPATH_THEMES.'/'.$this->template.'/aliases.php');
+} else {
+	function get_accessible_pos($pos){
+		return $pos;
+	}
+}
 
 // xml prolog
 echo '<?xml version="1.0" encoding="'. $this->_charset .'"?' .'>';

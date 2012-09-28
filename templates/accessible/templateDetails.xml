@@ -2,12 +2,12 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="1.7" type="template" client="site" method="upgrade">
 	<name>accessible</name>
-	<version>2.5.2</version>
-	<creationDate>2012-09-26</creationDate>
+	<version>2.5.2_dotslot</version>
+	<creationDate>2012-09-28</creationDate>
 	<author>Alessandro Pasotti - ItOpen</author>
 	<authorEmail>info@itopen.it</authorEmail>
 	<authorUrl>http://www.itopen.it</authorUrl>
-	<copyright>Copyright 2011 - itopen.it</copyright>
+	<copyright>Copyright 2012 - itopen.it</copyright>
 	<license>AGPL: Affero GPL</license>
 	<description>Accessible Template XHTML Strict</description>
 	<files>
@@ -44,6 +44,10 @@
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
                 </field>
+                <field name="beez2_positions" type="radio" default="no" label="Also load Beez2 positions">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </field>
                 <field name="default_variant" type="list" default="" label="Start with the template variant">
                     <option value="">None</option>
                     <option value="liquid">Liquid</option>
@@ -53,6 +57,7 @@
     </config>
 	<languages folder="language">
         <language tag="it-IT">it-IT/it-IT.tpl_accessible.ini</language>
+        <language tag="it-IT">it-IT/it-IT.tpl_accessible.sys.ini</language>
 	</languages>
 
 	<positions>

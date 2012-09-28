@@ -45,8 +45,8 @@ function prefs_save(){
 
 function fs_change(diff){
     fs_current = parseInt(fs_current) + parseInt(diff * 5);
-    if(fs_current > 100){
-        fs_current = 100;
+    if(fs_current > 150){
+        fs_current = 150;
     }else if(fs_current < 70){
         fs_current = 70;
     }
@@ -61,18 +61,13 @@ function skin_change(skin){
     } else {
         variant = '';
     }
-    if (skin == 'swap'){
-      //console.log('SWAP');
-      //console.log('CURRENT:' + skin_current)
-      //console.log('variant :' + variant)
+    if (skin == 'swap'){     
       if (skin_current.search('white') != -1){
           skin = 'black';
       } else {
           skin = 'white';
       }
     }
-    //console.log('skin :' + skin)
-    //console.log('variant :' + variant)
     if (skin.search(' ') == -1) {
       skin = skin + variant;
     }
@@ -91,8 +86,6 @@ function skin_set_variant(variant){
     if (variant && skin_current.search(variant) == -1) {
       skin += ' ' + variant;
     }
-    //console.log('skin_set_variant skin :' + skin)
-    //console.log('skin_set_variant variant :' + variant)
     skin_current = skin;
     skin_change(skin);
     return false;
