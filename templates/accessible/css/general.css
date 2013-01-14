@@ -52,7 +52,7 @@ label.invalid {
 
 
 #system-message dd.error {
-  }
+}
 
 
 #system-message dd.error ul {
@@ -71,7 +71,7 @@ label.invalid {
 
 
 #system-message dd.notice {
-  }
+}
 
 
 #system-message dd.notice ul {
@@ -155,3 +155,4 @@ label.invalid {
 .button2-left .pagebreak {
 	background: url(../images/j_button2_pagebreak.png) 100% 0 no-repeat;
 }
+

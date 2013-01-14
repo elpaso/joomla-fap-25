@@ -61,7 +61,7 @@ function get_accessible_pos($pos){
         $res[] = $p;
         if(array_key_exists($p, $_accessible_position_aliases)){
             if(is_array($_accessible_position_aliases[$p])){
-                $res += $_accessible_position_aliases[$p];
+                $res = array_merge($res, $_accessible_position_aliases[$p]);
             } else {
                 $res[] = $_accessible_position_aliases[$p];
             }

@@ -1,6 +1,20 @@
-
+.gitignore
 templates/accessible/_html/*
+templates/accessible/css/*.less
 development/*
 templates/accessible/css/custom_theme.css
 .release
+plugins/system/powertags/*
+templates/accessible/js/less*
+templates/accessible_*
+templates/accessible/images/.directory
+plugins/content/geocontent
+components/com_geocontent/
+components/com_powertags/
+modules/
+plugins/content/geocontent/
+plugins/content/powertags/
+plugins/editors-xtd/
+plugins/system/_powertags/
+templates/accessible/css/colors.css
 

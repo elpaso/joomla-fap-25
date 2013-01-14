@@ -27,7 +27,13 @@ div.maincomponent fieldset button {
     cursor: pointer;
 }
 
-#editor-xtd-buttons div, div.maincomponent .mceEditor div {
+#adminForm a {
+	border-bottom: none;
+}
+
+#editor-xtd-buttons div,
+div.maincomponent .mceEditor div,
+div.maincomponent .toggle-editor div {
   padding:0;
 }
 
@@ -139,15 +145,15 @@ div#footer div.moduletable{
 }
 
 h1 {
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 h2 {
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 h3 {
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 /** Images */
@@ -155,12 +161,17 @@ h3 {
     vertical-align: bottom;
 }
 
-.blog img {
-    margin: 0.5em;
+div.item {
     overflow: hidden;
 }
 
+.blog img,
+.blog-featured img {
+    margin: 0.5em;
+}
+
 .buttonheading img,
+.blog-featured a img 
 .blog a img  {
     border: none;
     margin: 0;
@@ -238,10 +249,6 @@ span.accessibility-icon #layoutnormal { background-image: url('../images/layoutn
     padding: 0.5em 0 0.5em 0.5em;
 }
 
-#mod_search_searchword {
-    width: 140px;
-    font-size:inherit;
-}
 
 div.pageslinks {
 	text-align: center;
@@ -268,8 +275,6 @@ form#searchForm, form#searchForm label,  form#searchForm input {
 	margin: 0;
 }
 
-form#searchForm div {
-}
 
 div.contentpaneopen ul, div.contentpaneopen ul {
     margin: 1.5em;
@@ -349,7 +354,7 @@ div.buttonheading {
 	margin-bottom: 1em;
 }
 
-.readmore a {
+.item .readmore a {
 	padding: 0.3em;
 	padding-left: 0;
 }
@@ -359,6 +364,9 @@ div.column_separator .yvComment {
 	margin-bottom: 1em;
 }
 
+.item-separator {
+    clear: both;
+}
 
 /* Forms */
 
@@ -403,6 +411,7 @@ div.pagination
 ul.pagenav {
     padding: 1em;
     margin: 1em 0;
+    clear: both;
 }
 
 div.pagination ul
@@ -499,12 +508,15 @@ table {
     margin: 0;
     padding: 0;
     text-align: right;
-    width: 100%;
+    width: 20%;
+    float: right;
 }
 
 .article-info {
     font-size: 0.9em;
     margin: 1em 0 1em 0;
+    display: block;
+    width: 80%;
 }
 
 .article-info-term {
@@ -527,10 +539,18 @@ table {
         margin-left: 0.5em;
 }
 
-#modlgn-username
-, #modlgn-passwd {
+#modlgn-username,
+#modlgn-passwd
+
+ {
     width: 190px;
 }
+
+#mod-search-searchword
+ {
+    width: 150px;
+}
+
 /* mod stats  */
 
 
@@ -596,4 +616,16 @@ div.img-intro-left {
 div.img-intro-right {
 	float: right;
 	margin: 0 0 0.5em 0.5em;
+}
+
+.tip
+{
+  border:solid 1px #333;
+  background:#ffffcc;
+  padding: 0.5em;
+}
+
+
+#editor-xtd-buttons a:hover {
+	background: inherit;
 }

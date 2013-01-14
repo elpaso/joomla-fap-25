@@ -56,9 +56,7 @@ $params = $this->state->get('params');
 			<button type="button" onclick="Joomla.submitbutton('article.save')">
 				<?php echo JText::_('JSAVE') ?>
 			</button>
-            <button type="button" onclick="Joomla.submitbutton('article.apply')">
-                <?php echo JText::_('JAPPLY') ?>
-            </button>
+            
 			<button type="button" onclick="Joomla.submitbutton('article.cancel')">
 				<?php echo JText::_('JCANCEL') ?>
 			</button>

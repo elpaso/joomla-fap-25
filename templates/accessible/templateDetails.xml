@@ -2,8 +2,8 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="1.7" type="template" client="site" method="upgrade">
 	<name>accessible</name>
-	<version>2.5.3</version>
-	<creationDate>2012-10-06</creationDate>
+	<version>2.5.4</version>
+	<creationDate>2013-01-14</creationDate>
 	<author>Alessandro Pasotti - ItOpen</author>
 	<authorEmail>info@itopen.it</authorEmail>
 	<authorUrl>http://www.itopen.it</authorUrl>
@@ -41,10 +41,6 @@
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
                 </field>
-                <field name="custom_theme" type="radio" default="yes" label="Use custom theme if available (custom_theme.css)">
-                    <option value="no">No</option>
-                    <option value="yes">Yes</option>
-                </field>
                 <field name="beez2_positions" type="radio" default="no" label="Also load Beez2 positions">
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
@@ -53,6 +49,7 @@
                     <option value="">None</option>
                     <option value="liquid">Liquid</option>
                 </field>
+                <field name="custom_theme" type="filelist" default="" label="Select a custom CSS file" description="Custom CSS file" directory="templates/accessible/css" filter="custom_(.*)\.css" exclude="" stripext=".css" hide_default="true" />
             </fieldset>
         </fields>
     </config>
