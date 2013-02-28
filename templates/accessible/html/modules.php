@@ -27,8 +27,10 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 function modChrome_accessible( $module, &$params, &$attribs ) {
 	if (!empty ($module->content)) : ?>
 		<div class="moduletable<?php echo htmlspecialchars($params->get('moduleclass_sfx')); ?>">
-		<?php if ($module->showtitle != 0) : ?>
-			<div class="module-title"><?php echo $module->title; ?></div>
+		<?php if ($module->showtitle != 0) :
+			$heading_tag = JFactory::getDocument()->params->get('module_heading', 'div');
+		?>			
+			<<?php echo $heading_tag ?> class="module-title"><?php echo $module->title; ?></<?php echo $heading_tag ?>>
 		<?php endif; ?>
 			<?php echo $module->content; ?>
 		</div>

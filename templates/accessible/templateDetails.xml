@@ -2,8 +2,8 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="1.7" type="template" client="site" method="upgrade">
 	<name>accessible</name>
-	<version>2.5.4</version>
-	<creationDate>2013-01-14</creationDate>
+	<version>2.5.5</version>
+	<creationDate>2013-02-28</creationDate>
 	<author>Alessandro Pasotti - ItOpen</author>
 	<authorEmail>info@itopen.it</authorEmail>
 	<authorUrl>http://www.itopen.it</authorUrl>
@@ -44,6 +44,12 @@
                 <field name="beez2_positions" type="radio" default="no" label="Also load Beez2 positions">
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
+                </field>
+                <field name="module_heading" type="list" default="div" label="Choose tag for module titles">
+                    <option value="div">DIV</option>
+                    <option value="h1">H1</option>
+                    <option value="h2">H2</option>
+                    <option value="h3">H3</option>
                 </field>
                 <field name="default_variant" type="list" default="" label="Start with the template variant">
                     <option value="">None</option>
