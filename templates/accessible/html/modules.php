@@ -32,7 +32,9 @@ function modChrome_accessible( $module, &$params, &$attribs ) {
 		?>			
 			<<?php echo $heading_tag ?> class="module-title"><?php echo $module->title; ?></<?php echo $heading_tag ?>>
 		<?php endif; ?>
-			<?php echo $module->content; ?>
+			<div class="modulecontent">
+				<?php echo $module->content; ?>
+			</div>
 		</div>
 	<?php endif;
 		
