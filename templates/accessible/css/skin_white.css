@@ -103,12 +103,12 @@ body.white div.componentheading {
   color: gray;
   font-weight: bold;
 }
-body.white .readmore a {
+body.white .item .readmore a {
   color: #001b72;
   font-weight: bold;
   border-bottom: dotted 1px #001b72;
 }
-body.white .readmore a:hover,
+body.white .item .readmore a:hover,
 body.white a.contentpagetitle:hover {
   background: #001b72;
   color: #ffffff;
