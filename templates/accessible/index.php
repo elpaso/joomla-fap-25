@@ -4,7 +4,7 @@
 * Joomla! 2.5 FAP
 * @package   JoomlaFAP
 * @author    Alessandro Pasotti
-* @copyright    Copyright (C) 2012 Alessandro Pasotti http://www.itopen.it
+* @copyright    Copyright (C) 2013 Alessandro Pasotti http://www.itopen.it
 * @license      GNU/AGPL
 
     This program is free software: you can redistribute it and/or modify
@@ -24,6 +24,9 @@
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
+// Comment to release
+//define('FAP_TESTING', 1);
+
 JHtml::_('behavior.framework', true);
 
 if($this->params->get('beez2_positions') == 'yes'){
@@ -39,6 +42,7 @@ if($this->params->get('beez2_positions') == 'yes'){
 // xml prolog
 echo '<?xml version="1.0" encoding="'. $this->_charset .'"?' .'>';
 
+$short_text = 'yes' == $this->params->get('accessibility_short_text', 'no') ? '_SHORT' : '';
 
 $cols = 1;
 if ($this->countModules(get_accessible_pos('right'))
@@ -107,10 +111,15 @@ if($fap_font_size_request = JRequest::getVar('fap_font_size')){
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 <meta name="language" content="<?php echo $this->language; ?>" />
+<?php if ($this->params->get('custom_theme') && file_exists(JPATH_THEMES.'/'.$this->template.'/images/'. $this->params->get('custom_theme').'/favicon.ico')) : ?>
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/images/<?php echo $this->params->get('custom_theme'); ?>/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<?php elseif(file_exists(JPATH_THEMES.'/'.$this->template.'/images/favicon.ico')): ?>
+<link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<?php endif; ?>
 <jdoc:include type="head" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/system.css" type="text/css" />
 <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
-<?php if (file_exists(JPATH_THEMES.'/'.$this->template.'/css/skin_white.less')) { ?>
+<?php if (defined('FAP_TESTING') && file_exists(JPATH_THEMES.'/'.$this->template.'/css/skin_white.less')) { ?>
 <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_white.less" type="text/css" rel="stylesheet/less" />
 <link href="<?php echo JURI::base();?>templates/<?php echo $this->template; ?>/css/skin_black.less" type="text/css" rel="stylesheet/less" />
 <script type="text/javascript" src="<?php echo JURI::base();?>templates/<?php echo $this->template;?>/js/less-1.3.0.min.js"></script>
@@ -170,14 +179,14 @@ if($fap_font_size = $session->get('fap_font_size')){ ?>
             <div id="accessibility-links">
                 <form id="fap_skin" method="post" action="">
                     <div>
-                        <?php echo JText::_('FAP_FONTSIZE'); ?>
-                        <button type="button" name="fap_font_size" value="decrease" id="decrease" accesskey="D" onclick="fs_change(-1); return false;" onkeypress="return handle_keypress(function(){fs_change(-1);});" title="<?php echo JText::_('FAP_DECREASE_SIZE'); ?> [D]"><?php echo JText::_('FAP_SMALLER'); ?></button>
-                        <button type="button"  name="fap_font_size" value="increase" id="increase" accesskey="A" onclick="fs_change(1); return false;" onkeypress="return handle_keypress(function(){fs_change(1);});" title="<?php echo JText::_('FAP_INCREASE_SIZE'); ?> [A]"><?php echo JText::_('FAP_BIGGER'); ?></button>
-                        <button type="button" name="fap_skin" value="contrasthigh" id="contrasthigh" accesskey="X" onclick="skin_change('swap');return false;" onkeypress="return handle_keypress(function(){skin_change('swap');});" title="<?php echo JText::_('FAP_HIGH_CONTRAST'); ?> [X]"><?php echo JText::_('FAP_CONTRAST'); ?></button>
+                        <?php if(!$short_text) echo JText::_('FAP_FONTSIZE'); ?>
+                        <button type="button" name="fap_font_size" value="decrease" id="decrease" accesskey="D" onclick="fs_change(-1); return false;" onkeypress="return handle_keypress(function(){fs_change(-1);});" title="<?php echo JText::_('FAP_DECREASE_SIZE'); ?> [D]"><?php echo JText::_('FAP_SMALLER' . $short_text); ?></button>
+                        <button type="button"  name="fap_font_size" value="increase" id="increase" accesskey="A" onclick="fs_change(1); return false;" onkeypress="return handle_keypress(function(){fs_change(1);});" title="<?php echo JText::_('FAP_INCREASE_SIZE'); ?> [A]"><?php echo JText::_('FAP_BIGGER' . $short_text); ?></button>
+                        <button type="button" name="fap_skin" value="contrasthigh" id="contrasthigh" accesskey="X" onclick="skin_change('swap');return false;" onkeypress="return handle_keypress(function(){skin_change('swap');});" title="<?php echo JText::_('FAP_HIGH_CONTRAST'); ?> [X]"><?php echo JText::_('FAP_CONTRAST' . $short_text); ?></button>
                         <?php if('yes' == $this->params->get('liquid_variant')) { ?>
-                        <button type="button" name="fap_skin" value="liquid" id="liquid" accesskey="L" onclick="skin_set_variant('liquid'); return false;" onkeypress="return handle_keypress(function(){skin_set_variant('liquid');});" title="<?php echo JText::_('FAP_SET_VARIABLE_WIDTH'); ?> [L]"><?php echo JText::_('FAP_VARIABLE_WIDTH'); ?></button>
+                        <button type="button" name="fap_skin" value="liquid" id="liquid" accesskey="L" onclick="skin_set_variant('liquid'); return false;" onkeypress="return handle_keypress(function(){skin_set_variant('liquid');});" title="<?php echo JText::_('FAP_SET_VARIABLE_WIDTH'); ?> [L]"><?php echo JText::_('FAP_VARIABLE_WIDTH' . $short_text); ?></button>
                         <?php } ?>
-                        <button type="button" name="reset" id="reset" value="<?php echo JText::_('FAP_RESET'); ?>" accesskey="Z" onclick="skin_change('<?php echo $this->params->get('default_skin'); ?>'); skin_set_variant(''); fs_set(fs_default); return false;" onkeypress="return handle_keypress(function(){skin_change('<?php echo $this->params->get('default_skin'); ?>'); skin_set_variant(''); fs_set(fs_default);});" title="<?php echo JText::_('FAP_REVERT_STYLES_TO_DEFAULT'); ?> [Z]"><?php echo JText::_('FAP_RESET'); ?></button>
+                        <button type="button" name="reset" id="reset" value="<?php echo JText::_('FAP_RESET'); ?>" accesskey="Z" onclick="skin_change('<?php echo $this->params->get('default_skin'); ?>'); skin_set_variant(''); fs_set(fs_default); return false;" onkeypress="return handle_keypress(function(){skin_change('<?php echo $this->params->get('default_skin'); ?>'); skin_set_variant(''); fs_set(fs_default);});" title="<?php echo JText::_('FAP_REVERT_STYLES_TO_DEFAULT'); ?> [Z]"><?php echo JText::_('FAP_RESET' . $short_text); ?></button>
                     </div>
                 </form>
 
