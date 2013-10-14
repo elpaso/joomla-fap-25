@@ -31,17 +31,17 @@ function get_accessible_pos($pos){
 
     $_accessible_position_aliases = array(
         'right' => array('position-6', 'position-8', 'position-3'),
-        'left' => 'position-4',
-        'user4' => 'position-7',
+        'left' => 'position-7',
+        'user4' => 'position-4',
         'inset' => 'position-5',
         'banner' => 'position-0',
         'footer' => 'position-14',
         'user1' => 'position-9',
         'user2' => 'position-10',
         'bottom' => 'position-11',
-        'breadcrumb' => 'position-1',
+        'breadcrumb' => 'position-2',
         'center' => 'position-12',
-        'user3' => 'position-2'
+        'user3' => 'position-1'
     );
 
     $res = array();

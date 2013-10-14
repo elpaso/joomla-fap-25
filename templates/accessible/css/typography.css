@@ -50,7 +50,7 @@ div.maincomponent fieldset button {
 }
 
 #adminForm a {
-	border-bottom: none;
+    border-bottom: none;
 }
 
 #editor-xtd-buttons div,
@@ -75,7 +75,7 @@ label.block {
     line-height: 1.7em;
 }
 
-.moduletable {
+.moduletable, .moduletable_menu {
     margin-bottom: 1em;
 }
 
@@ -85,21 +85,26 @@ label.block {
 }
 
 .moduletable-footer li {
-	display: inline-block;
-	padding: 0 1em;
-	font-weight: bold;
+    display: inline-block;
+    padding: 0 1em;
+    font-weight: bold;
 }
 
 .module-title {
-	font-size:110%;
-	font-weight:bold;
+    font-size:110%;
+    font-weight:bold;
     padding:0.5em 0 0.5em 0.5em;
-	margin: 0;
+    margin: 0;
+}
+
+/* hide top menu title */
+#menu-top .module-title {
+    display:none;
 }
 
 .moduletable p {
-	margin-left: 0.5em;
-	margin-right: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
 .menu a
@@ -144,16 +149,16 @@ label.block {
 
 
 a.contentpagetitle {
-	text-decoration: none;
-	color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 /* Footer */
 
 div#footer{
-	clear:both;
-	margin-top:3px;
-	text-align:center;
+    clear:both;
+    margin-top:3px;
+    text-align:center;
     line-height: 2em;
 }
 
@@ -273,30 +278,33 @@ span.accessibility-icon #layoutnormal { background-image: url('../images/layoutn
     padding: 0.5em 0 0.5em 0.5em;
 }
 
+.moduletable div.search label {
+    display:none;
+}
 
 div.pageslinks {
-	text-align: center;
-	margin-top: 1em;
-	padding: 0.25em;
-	clear: both;
+    text-align: center;
+    margin-top: 1em;
+    padding: 0.25em;
+    clear: both;
         font-weight: bold;
 }
 
 div.pagescounter {
-	text-align: center;
-	margin-bottom: 1em;
-	padding: 0.25em;
+    text-align: center;
+    margin-bottom: 1em;
+    padding: 0.25em;
         clear: both;
         font-weight: bold;
 }
 
 div.searchresult {
-	margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 
 form#searchForm, form#searchForm label,  form#searchForm input {
-	margin: 0;
+    margin: 0;
 }
 
 
@@ -304,25 +312,26 @@ div.contentpaneopen ul, div.contentpaneopen ul {
     margin: 1.5em;
 }
 
-ul.menu
+ul.menu,
+ul.menu ul
  {
-	padding: 0;
-	margin:0;
+    padding: 0;
+    margin:0;
 }
 
 
 /* Top */
 #top {
-	border-bottom:1px solid #CCCCCC;
-	height:42px;
-/*	margin:8px 2px 1px;
-	padding-bottom:2px;*/
+    border-bottom:1px solid #CCCCCC;
+    height:42px;
+/*  margin:8px 2px 1px;
+    padding-bottom:2px;*/
 }
 
 
 div#menu-top .moduletable {
-	padding-left: 0;
-	margin-bottom: 0;
+    padding-left: 0;
+    margin-bottom: 0;
 }
 
 
@@ -337,7 +346,7 @@ div#menu-top a {
 }
 
 div#menu-top ul.menu a {
-	padding: 0.25em 1em;
+    padding: 0.25em 1em;
     display: inline;
     border: none;
 }
@@ -349,13 +358,13 @@ div#menu-top ul.menu li {
 }
 
 div#menu-top ul.menu {
-	margin:0;
-	padding: 0.25em;
+    margin:0;
+    padding: 0.25em;
 }
 
 /** Banner */
 #banner .moduletable {
-	margin-bottom: 4px;
+    margin-bottom: 4px;
 }
 
 #banner a {
@@ -369,23 +378,23 @@ div#menu-top ul.menu {
 
 /** Titles and so */
 .contentheading h1 {
-	font-weight:bold;
-	margin:5px 0pt;
-	padding:0px 0px 5px;
+    font-weight:bold;
+    margin:5px 0pt;
+    padding:0px 0px 5px;
 }
 
 div.buttonheading {
-	margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 .item .readmore a {
-	padding: 0.3em;
-	padding-left: 0;
+    padding: 0.3em;
+    padding-left: 0;
 }
 
 div.column_separator .yvComment {
-	padding-left:4%;
-	margin-bottom: 1em;
+    padding-left:4%;
+    margin-bottom: 1em;
 }
 
 .item-separator {
@@ -395,24 +404,24 @@ div.column_separator .yvComment {
 /* Forms */
 
 fieldset {
-	padding: 1em;
+    padding: 1em;
 }
 
 legend {
     padding: 0 1em;
-	font-weight: bold;
+    font-weight: bold;
      font-size: 110%;
 }
 
 a img {
-	border: none;
+    border: none;
 }
 
 /* Content tables TODO: needed ? */
 .contentpane table td
 ,.contentpane table th
 {
-	padding: 0.25em;
+    padding: 0.25em;
 }
 
 /* Link view*/
@@ -427,8 +436,8 @@ span.description {
 /* Page navigation */
 div.pagination
 , ul.pagenav  {
-	font-weight: bold;
-	text-align: center;
+    font-weight: bold;
+    text-align: center;
     margin-bottom: 1em;
 }
 
@@ -632,14 +641,14 @@ text-decoration:none
 
 
 div.img-intro-left {
-	float: left;
-	margin: 0 0.5em 0.5em 0;
+    float: left;
+    margin: 0 0.5em 0.5em 0;
 }
 
 
 div.img-intro-right {
-	float: right;
-	margin: 0 0 0.5em 0.5em;
+    float: right;
+    margin: 0 0 0.5em 0.5em;
 }
 
 .tip
@@ -651,5 +660,5 @@ div.img-intro-right {
 
 
 #editor-xtd-buttons a:hover {
-	background: inherit;
+    background: inherit;
 }

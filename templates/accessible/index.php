@@ -4,7 +4,7 @@
 * Joomla! 2.5 FAP
 * @package   JoomlaFAP
 * @author    Alessandro Pasotti
-* @copyright    Copyright (C) 2013 Alessandro Pasotti http://www.itopen.it
+* @copyright    Copyright (C) 2008-2013 Alessandro Pasotti http://www.itopen.it
 * @license      GNU/AGPL
 
     This program is free software: you can redistribute it and/or modify
@@ -25,18 +25,21 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 // Comment to release
-//define('FAP_TESTING', 1);
+if(array_key_exists('fap', $_GET)){
+    define('FAP_TESTING', 1);
+}
+
 
 JHtml::_('behavior.framework', true);
 
 if($this->params->get('beez2_positions') == 'yes'){
-	$beez2_positions = true;
-	require_once(JPATH_THEMES.'/'.$this->template.'/aliases.php');
+    $beez2_positions = true;
+    require_once(JPATH_THEMES.'/'.$this->template.'/aliases.php');
 } else {
-	function get_accessible_pos($pos){
-		return $pos;
-	}
-	$beez2_positions = false;
+    function get_accessible_pos($pos){
+        return $pos;
+    }
+    $beez2_positions = false;
 }
 
 // xml prolog
@@ -46,13 +49,13 @@ $short_text = 'yes' == $this->params->get('accessibility_short_text', 'no') ? '_
 
 $cols = 1;
 if ($this->countModules(get_accessible_pos('right'))
-	&& JRequest::getCmd('layout') != 'form'
-	&& JRequest::getCmd('task') != 'edit') {
-	$cols += 1;
+    && JRequest::getCmd('layout') != 'form'
+    && JRequest::getCmd('task') != 'edit') {
+    $cols += 1;
 }
 
 if($this->countModules(get_accessible_pos('left or inset or user4'))) {
-	$cols += 1;
+    $cols += 1;
 }
 
 /* Accessibility session storage */
@@ -153,23 +156,23 @@ if($fap_font_size = $session->get('fap_font_size')){ ?>
 <script type="text/javascript" src="<?php echo JURI::base();?>templates/<?php echo $this->template;?>/js/skin_alter.js"></script>
 </head>
 <body class="<?php echo ($fap_skin_current ? $fap_skin_current : $this->params->get('default_skin').($this->params->get('default_variant') ? ' ' . $this->params->get('default_variant') : ''));?>" id="main">
-	<div class="hidden">
-		<a name="up" id="up"></a>
-		<h1><?php echo $this->description; ?></h1>
-		<!-- accesskey goes here! -->
-		<ul>
-			<li><a accesskey="P" href="#main-content"><?php echo JText::_('FAP_SKIP_TO_CONTENT'); ?></a></li>
-			<li><a accesskey="M" href="#main-menu"><?php echo JText::_('FAP_JUMP_TO_MAIN_NAVIGATION_AND_LOGIN'); ?></a></li>
-		</ul>
-	</div>
+    <div class="hidden">
+        <a id="up"></a>
+        <h1><?php echo $this->description; ?></h1>
+        <!-- accesskey goes here! -->
+        <ul>
+            <li><a accesskey="P" href="#main-content"><?php echo JText::_('FAP_SKIP_TO_CONTENT'); ?></a></li>
+            <li><a accesskey="M" href="#main-menu"><?php echo JText::_('FAP_JUMP_TO_MAIN_NAVIGATION_AND_LOGIN'); ?></a></li>
+        </ul>
+    </div>
     <div id="wrapper">
         <?php if ($this->countModules(get_accessible_pos('breadcrumb'))) { ?>
         <div id="pathway">
             <div class="padding">
             <jdoc:include type="modules" name="breadcrumb" />
             <?php if($beez2_positions){ ?>
-            <jdoc:include type="modules" name="position-1" />
-			<?php } ?>
+            <jdoc:include type="modules" name="position-2" />
+            <?php } ?>
             </div>
         </div>
         <?php } ?>
@@ -228,7 +231,7 @@ if($fap_font_size = $session->get('fap_font_size')){ ?>
                 <div class="padding">
                 <jdoc:include type="modules" name="user3" style="accessible" />
                 <?php if($beez2_positions){ ?>
-                <jdoc:include type="modules" name="position-2" style="accessible" />
+                <jdoc:include type="modules" name="position-1" style="accessible" />
                 <?php } ?>
                 </div>
             </div>
@@ -238,17 +241,17 @@ if($fap_font_size = $session->get('fap_font_size')){ ?>
             <div id="sidebar-left">
             <div class="padding">
                 <a name="main-menu" class="hidden"></a>
-            	<?php if ($this->countModules(get_accessible_pos('user4'))) { ?>
+                <?php if ($this->countModules(get_accessible_pos('user4'))) { ?>
                 <div id="searchbox">
                     <jdoc:include type="modules" name="user4" style="accessible" />
                     <?php if($beez2_positions){ ?>
-                    <jdoc:include type="modules" name="position-7" style="accessible" />
+                    <jdoc:include type="modules" name="position-4" style="accessible" />
                     <?php } ?>
                 </div>
                 <?php } ?>
                 <jdoc:include type="modules" name="left" style="accessible" />
                 <?php if($beez2_positions){ ?>
-                <jdoc:include type="modules" name="position-4" style="accessible" />
+                <jdoc:include type="modules" name="position-7" style="accessible" />
                 <?php } ?>
                 <?php if ($this->countModules(get_accessible_pos('inset'))) { ?>
                 <div class="inset">
@@ -261,8 +264,8 @@ if($fap_font_size = $session->get('fap_font_size')){ ?>
             </div>
             </div>
         <?php } ?>
-        <?php if ($this->countModules(get_accessible_pos('right')) 	&& JRequest::getCmd('layout') != 'form'
-	&& JRequest::getCmd('task') != 'edit') { ?>
+        <?php if ($this->countModules(get_accessible_pos('right'))  && JRequest::getCmd('layout') != 'form'
+    && JRequest::getCmd('task') != 'edit') { ?>
         <div id="sidebar-right">
             <div class="padding">
                 <jdoc:include type="modules" name="right" style="accessible" />
@@ -327,7 +330,7 @@ if($fap_font_size = $session->get('fap_font_size')){ ?>
                 <?php if($beez2_positions){ ?>
                 <jdoc:include type="modules" name="position-14" style="accessible" />
                 <?php } ?>
-				<?php } ?>
+                <?php } ?>
             </div>
 
         </div>

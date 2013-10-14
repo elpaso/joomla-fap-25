@@ -4,7 +4,7 @@
 * Joomla! 2.5 FAP
 * @package   JoomlaFAP
 * @author    Alessandro Pasotti
-* @copyright    Copyright (C) 2012 Alessandro Pasotti http://www.itopen.it
+* @copyright    Copyright (C) 2013 Alessandro Pasotti http://www.itopen.it
 * @license      GNU/AGPL
 
     This program is free software: you can redistribute it and/or modify
@@ -31,7 +31,11 @@ $accesskeys = AccesskeyHelper::getAccessKeys();
 $titles     = AccesskeyHelper::getTitles();
 
 // Note. It is important to remove spaces between elements.
-$class = $item->anchor_css ? 'class="external-link '.$item->anchor_css.'" ' : 'class="external-link" ';
+if((strpos($item->link, 'Itemid=') === false)){
+    $class = $item->anchor_css ? 'class="external-link '.$item->anchor_css.'" ' : 'class="external-link" ';
+} else {
+    $class = $item->anchor_css ? 'class="'.$item->anchor_css.'" ' : ' ';
+}
 $title = $item->anchor_title ? 'title="'.$item->anchor_title.'" ' : '';
 if ($item->menu_image) {
         $item->params->get('menu_text', 1 ) ?

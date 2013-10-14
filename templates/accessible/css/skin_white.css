@@ -6,24 +6,42 @@ body.white {
   background-color: #f0f3f8;
 }
 body.white a {
+  /* AAA
+    text-decoration: none;
+    border-bottom: dotted 1px @links;
+    */
+
+  color: #001b72;
+  background-color: #ffffff;
+}
+body.white a:visited {
+  color: #001b72;
+}
+body.white a:hover, body.white a:focus, body.white a:active {
+  background-color: #001b72;
+  color: #ffffff;
+  text-decoration: underline;
+  border-bottom: none;
+}
+body.white a:focus, body.white a:active {
+  background-color: #001b72;
+  color: #ffffff;
+}
+body.white h1 a, body.white h2 a, body.white h3 a {
   text-decoration: none;
-  border-bottom: dotted 1px #001b72;
-  color: #001b72;
+  color: #002c74;
 }
-body.white h1 a,
-body.white h2 a,
-body.white h3 a {
-  color: #990033;
-  border-bottom: solid 1px transparent;
+body.white h1 a:visited, body.white h2 a:visited, body.white h3 a:visited {
+  color: #002c74;
+  background-color: #ffffff;
 }
-body.white a:hover {
-  background: #ffffff;
-  color: #001b72;
+body.white h1 a:hover, body.white h2 a:hover, body.white h3 a:hover {
+  color: #224e96;
+  background-color: #ffffff;
 }
-body.white h1,
-body.white h2 {
-  color: #990033;
-  border-bottom: solid 1px #990033;
+body.white h1, body.white h2 {
+  color: #002c74;
+  border-bottom: solid 1px #002c74;
 }
 body.white h1 {
   border-bottom: solid 1px transparent;
@@ -45,59 +63,62 @@ body.white .module-title {
 }
 body.white div#footer .moduletable {
   color: #000000;
-  background-color: #efefef;
+  background-color: #f3ede2;
   border: solid 1px #efefef;
 }
-body.white div#menu-top {
-  background-color: #002c74;
-}
-body.white div#menu-top a {
-  color: #ffffff;
-}
-body.white .menu a,
-body.white .menu ul:first-child li.parent:first-child {
-  color: #001b72;
+/***************************************
+ Menus
+*/
+body.white .menu a, body.white .menu ul:first-child li.parent:first-child {
+  color: #002c74;
   border-top: dotted 1px gray;
   border-bottom: none;
 }
-body.white .menu li li a,
-body.white .menu li li li a,
-body.white .menu ul.parent li a {
+body.white .menu li li a, body.white .menu li li li a, body.white .menu ul.parent li a {
   border-top: none;
 }
-body.white .menu a:visited {
-  color: #001b72;
-}
-body.white .menu a:hover {
-  background-color: #dfe4ed;
-}
-body.white .menu li.current a {
-  background-color: #dfe4ed;
-}
-body.white #menu-top .menu li.current a {
-  color: #dfe4ed;
-  background-color: #001b72;
+body.white .menu li.current a:link, body.white .menu li.current a:visited {
+  background-color: #eeeeff;
 }
 body.white .menu li.current li a {
   background-color: white;
 }
-body.white #main a:hover,
-body.white #main a:active,
-body.white #main a:focus {
-  color: white;
-  background-color: #001b72;
+body.white .menu a:focus,
+body.white .menu a:hover,
+body.white .menu a:active,
+body.white .menu li.current a:focus,
+body.white .menu li.current a:hover,
+body.white .menu li.current a:active {
+  background-color: #002c74;
+  color: #ffffff;
+  text-decoration: none;
 }
-body.white div#menu-top a:hover {
-  background-color: white;
-  color: #001b72;
+/* TOP menu */
+body.white div#menu-top .menu li.current a {
+  color: #ffffff;
+  background-color: #002c74;
 }
-body.white .moduletable_menu,
-body.white .moduletable-menu,
-body.white .moduletable {
-  border: solid 1px #001b72;
+body.white div#menu-top, body.white div#menu-top .menu a, body.white div#menu-top .menu a:visited {
+  background-color: #002c74;
+  color: #ffffff;
+}
+body.white div#menu-top .menu li.current a:hover, body.white div#menu-top .menu a:hover {
+  background-color: #ffffff;
+  color: #002c74;
+}
+body.white .moduletable_menu, body.white .moduletable-menu, body.white .moduletable {
+  border: solid 1px #002c74;
 }
 body.white div#footer a {
   color: #001b72;
+}
+body.white div#footer a:hover, body.white div#footer a:active, body.white div#footer a:focus {
+  color: #ffffff;
+  background-color: #001b72;
+}
+body.white #main a:hover, body.white #main a:active, body.white #main a:focus {
+  color: white;
+  background-color: #001b72;
 }
 body.white div.componentheading {
   color: gray;
@@ -106,63 +127,71 @@ body.white div.componentheading {
 body.white .item .readmore a {
   color: #001b72;
   font-weight: bold;
-  border-bottom: dotted 1px #001b72;
+  /* AAA: links underlined
+    border-bottom: dotted 1px @readmore_fg;
+    */
+
 }
+body.white .item .readmore a:focus,
 body.white .item .readmore a:hover,
+body.white .item .readmore a:active,
 body.white a.contentpagetitle:hover {
-  background: #001b72;
-  color: #ffffff;
+  background: #eeeeff;
+  color: #001b72;
+  text-decoration: none;
 }
-body.white .button,
-body.white button,
-body.white .button-search {
+body.white .button, body.white button, body.white .button-search {
   border: solid 1px #ffffff;
   background: #002c74;
   color: #ffffff;
 }
-body.white .button:hover,
-body.white button:hover,
-body.white .button-search:hover {
+body.white .button:hover, body.white button:hover, body.white .button-search:hover {
   background: #224e96;
 }
 body.white .sectiontableentry1 {
-  background: #eef2ff;
+  background: #f9f6f0;
 }
 body.white div.pagenav {
-  background: #eef2ff;
+  background: #f9f6f0;
   border: solid 1px #001b72;
 }
-/* tags */
+/***************************************
+ tags */
 body.white .highlight {
   background: yellow;
 }
-body.white .pagination,
-body.white ul.pagenav {
-  background: #eef2ff none repeat scroll 0%;
+body.white .pagination, body.white ul.pagenav {
+  background: #f9f6f0 none repeat scroll 0%;
   border-top: 1px solid #bbbbbb;
   border-bottom: 1px solid #bbbbbb;
 }
-body.white .notice,
-body.white .message {
-  background: #dfe4ed none repeat scroll 0%;
+body.white .notice, body.white .message {
+  background: #eeeeff none repeat scroll 0%;
   font-size: 110%;
   font-style: italic;
   padding: 1em;
 }
-body.white form.editor a:hover,
-body.white .mceWrapper a:hover {
+body.white form.editor a:hover, body.white .mceWrapper a:hover {
   background: inherit;
   color: black;
 }
-body.white div#accessibility-links span.accessibility-icon button,
-body.white div#accessibility-links span.accessibility-icon {
+body.white div#accessibility-links span.accessibility-icon button, body.white div#accessibility-links span.accessibility-icon {
   background-color: #002c74;
+  color: #ffffff;
 }
 body.white div#accessibility-links span.accessibility-icon button:hover {
   background-color: #0037ae;
 }
 body.white div#accessibility-links span.accessibility-text {
   color: #000000;
+}
+body.white .accessibility-hidden-links a, body.white .accessibility-hidden-links a:visited {
+  color: #000000;
+  background-color: #ffffff;
+}
+body.white .accessibility-hidden-links a:hover {
+  color: #ffffff;
+  background-color: #000000;
 }
 div#accessibility-links button {
   background-color: #ffffff;
@@ -180,7 +209,8 @@ body.white table.weblinks th,
 body.white table.newsfeeds th,
 body.white table.category th,
 body.white table.jlist-table th {
-  color: white;
+  color: #ffffff;
+  background-color: #002c74;
 }
 body.white table.weblinks th,
 body.white table.newsfeeds th,
@@ -188,8 +218,7 @@ body.white table.category th,
 body.white table.jlist-table th {
   background: none repeat scroll 0 0 #002c74;
 }
-body.white tr,
-body.white td {
+body.white tr, body.white td {
   border: 1px solid #dddddd;
 }
 body.white fieldset {
@@ -197,6 +226,13 @@ body.white fieldset {
 }
 body.white .article-info {
   color: #652401;
+}
+body.white .article-info a {
+  color: #001b72;
+}
+body.white .article-info a:focus, body.white .article-info a:hover, body.white .article-info a:active {
+  color: #ffffff;
+  background-color: #001b72;
 }
 body.white .star {
   color: red;
@@ -209,11 +245,10 @@ body.white .panel h3.pane-toggler-down a {
   background: #f5f5f5 url(../images/slider_minus.png) right top no-repeat;
   border-bottom: 1px solid #dddddd;
 }
-body.white .panel h3.pane-toggler a:hover,
-body.white .panel h3.pane-toggler-down a:hover {
+body.white .panel h3.pane-toggler a:hover, body.white .panel h3.pane-toggler-down a:hover {
   color: white;
   background: #001b72;
 }
 body.white .cat-list-row1 {
-  background-color: #eef2ff;
+  background-color: #f9f6f0;
 }

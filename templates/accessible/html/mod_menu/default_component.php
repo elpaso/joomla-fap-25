@@ -1,10 +1,10 @@
 <?php
 /**
 * This file is part of
-* Joomla! 1.7 FAP
+* Joomla! 2.5 FAP
 * @package   JoomlaFAP
 * @author    Alessandro Pasotti
-* @copyright    Copyright (C) 2011 Alessandro Pasotti http://www.itopen.it
+* @copyright    Copyright (C) 2013 Alessandro Pasotti http://www.itopen.it
 * @license      GNU/AGPL
 
     This program is free software: you can redistribute it and/or modify
@@ -40,6 +40,7 @@ if ($item->menu_image) {
 }
 else { $linktype = $item->title;
 }
+
 
 switch ($item->browserNav) :
     default:

@@ -6,22 +6,19 @@ body.black {
   background-color: #1e2031;
   color: #ffffff;
 }
-body.black h1 a,
-body.black h2 a {
+body.black h1 a, body.black h2 a {
   color: #fcbb78;
   border-bottom: none;
   text-decoration: none;
 }
-body.black h1,
-body.black h2 {
+body.black h1, body.black h2 {
   color: #fcbb78;
   border-bottom: solid 1px #fcbb78;
 }
 body.black a {
   color: #70dbff;
 }
-body.black .menu a,
-body.black div#menu-top a {
+body.black .menu a, body.black div#menu-top a {
   text-decoration: underline;
 }
 /** Block styles */
@@ -46,8 +43,7 @@ body.black .module-title {
   color: #ffffff;
   background-color: #000a2c;
 }
-body.black .moduletable_menu,
-body.black .moduletable {
+body.black .moduletable_menu, body.black .moduletable {
   border: solid 1px #000a2c;
 }
 body.black div#footer a {
@@ -73,20 +69,15 @@ body.black .readmore a:hover {
 body.black .menu a {
   color: #ffff00;
 }
-body.black .button,
-body.black button,
-body.black .button-search {
+body.black .button, body.black button, body.black .button-search {
   border: solid 1px #ffffff;
   background: #fba44b;
   color: #000000;
 }
-body.black .button:hover,
-body.black button:hover,
-body.black .button-search:hover {
+body.black .button:hover, body.black button:hover, body.black .button-search:hover {
   background: #ffc66d;
 }
-body.black div#accessibility-links span.accessibility-icon button,
-body.black div#accessibility-links span.accessibility-icon {
+body.black div#accessibility-links span.accessibility-icon button, body.black div#accessibility-links span.accessibility-icon {
   background-color: black;
 }
 body.black div#accessibility-links span.accessibility-icon button:hover {

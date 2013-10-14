@@ -2,14 +2,14 @@
 <!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
 <extension version="1.7" type="template" client="site" method="upgrade">
 	<name>accessible</name>
-	<version>2.5.5</version>
-	<creationDate>2013-02-28</creationDate>
+	<version>2.5.9</version>
+	<creationDate>2013-10-14</creationDate>
 	<author>Alessandro Pasotti - ItOpen</author>
 	<authorEmail>info@itopen.it</authorEmail>
 	<authorUrl>http://www.itopen.it</authorUrl>
 	<copyright>Copyright 2012 - itopen.it</copyright>
 	<license>AGPL: Affero GPL</license>
-	<description>Accessible Template XHTML Strict</description>
+	<description>Accessible Template XHTML Strict - unionedeicolli</description>
 	<files>
 
 		<filename>templateDetails.xml</filename>
@@ -38,6 +38,10 @@
                 <option value="yes">Yes</option>
                 </field>
                 <field name="accessibility_icons" type="radio" default="yes" label="Display accessibility icons instead of buttons">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </field>
+                <field name="accessibility_short_text" type="radio" default="no" label="Display accessibility text in short form">
                     <option value="no">No</option>
                     <option value="yes">Yes</option>
                 </field>

@@ -2,8 +2,8 @@
 * Accessibility
 *
 * This file is part of
-* Joomla! 1.7 FAP
-* @copyright 2011 ItOpen http://www.itopen.it
+* Joomla! 2.5 FAP
+* @copyright 2013 ItOpen http://www.itopen.it
 * @author    Alessandro Pasotti
 * @licence   GNU/AGPL v. 3
 *
@@ -14,11 +14,11 @@ var prefs_loaded = false;
 var fs_current   = fs_default;
 var skin_current = skin_default;
 
-function handle_keypress(action){
+function handle_keypress(event, action){
     if(event.keyCode && event.keyCode != 9){
         action();
     }
-    return false;
+    return true;
 }
 
 function prefs_load(){
@@ -61,7 +61,7 @@ function skin_change(skin){
     } else {
         variant = '';
     }
-    if (skin == 'swap'){     
+    if (skin == 'swap'){
       if (skin_current.search('white') != -1){
           skin = 'black';
       } else {
