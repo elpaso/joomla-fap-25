@@ -1,9 +1,8 @@
 <?php
 /**
-* This file is part of Joomla! 1.5 FAP
-* @version      $Id: helper.php 9877 2008-01-05 12:37:25Z mtk $
+* This file is part of Joomla! 2.5 FAP
 * @package      JoomlaFAP
-* @copyright    Copyright (C) 2008 Alessandro Pasotti http://www.itopen.it
+* @copyright    Copyright (C) 2008-2013 Alessandro Pasotti http://www.itopen.it
 * @license      GNU/AGPL
 
     This program is free software: you can redistribute it and/or modify
@@ -28,8 +27,8 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 jimport('joomla.application.component.controller');
 class AccesskeysController extends JController {
 
-     function display() {
-        	parent::display();
+     function display($cachable = false, $urlparams = false) {
+            parent::display($cachable, $urlparams);
      }
 }
 ?>

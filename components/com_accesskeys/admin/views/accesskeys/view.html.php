@@ -37,7 +37,7 @@ class AccesskeysViewAccesskeys extends JView {
 
     function display($tpl = null) {
 
-        $this->assignRef('ak_record', JRequest::getVar('cid'));
+        $this->assign('ak_record', JRequest::getVar('cid'));
 
         // Assign data to the view
         $this->ak_record    = JRequest::getVar('cid');
