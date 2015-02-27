@@ -2,6 +2,8 @@ SCOPO DEL PROGETTO
 ------------------
 Rendere conforme alla legge "Stanca" il FE di Joomla 2.5 e successive
 
+Per ulteriori informazioni sul sito dedicato al `template accessibile<http://www.joomlafap.it/>`_`template accessibile per Joomla!`
+
 CONTENUTO DEL PROGETTO
 ----------------------
 
